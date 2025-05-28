@@ -17,51 +17,11 @@ cd bid-management-system
 ```
 
 2. Set up Python virtual environment:
-
-A Python virtual environment is an isolated environment that allows you to manage project-specific dependencies. This is important because it helps avoid conflicts between different projects and ensures that your project has the correct versions of the libraries it needs, making your setup reproducible.
-
-Navigate to the `backend` directory if you are not already there:
 ```bash
 cd backend
-```
-
-To create the virtual environment, use the `python` command that corresponds to your Python 3.8+ installation (as specified in the Prerequisites). If your system's `python` command points to an older Python 2 version, you should use `python3` instead.
-
-```bash
 python -m venv venv
-# Or, if your 'python' command points to Python 2:
-# python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
-
-**Troubleshooting Virtual Environment Setup:**
-
-*   The `venv` module is included with Python 3.3 and later. However, on some Linux distributions (like Debian or Ubuntu), you might need to install it separately. If the command above fails, try running:
-    ```bash
-    sudo apt-get install python3-venv
-    ```
-*   If you still encounter issues, ensure Python 3.8 or higher is installed correctly and that its installation directory is added to your system's PATH. You can verify your Python version by running `python --version` or `python3 --version`.
-
-Once the virtual environment is created, you need to activate it. The activation command varies depending on your shell:
-
-*   **Bash/Zsh:**
-    ```bash
-    source venv/bin/activate
-    ```
-*   **Fish:**
-    ```bash
-    source venv/bin/activate.fish
-    ```
-*   **CMD (Windows Command Prompt):**
-    ```bash
-    venv\Scripts\activate.bat
-    ```
-*   **PowerShell (Windows):**
-    ```bash
-    venv\Scripts\Activate.ps1
-    ```
-    (Note: If you get an error in PowerShell about script execution being disabled, you may need to set the execution policy for the current session by running: `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process`)
-
-You should see the name of the virtual environment (e.g., `(venv)`) prefixed to your command prompt, indicating that the virtual environment is active.
 
 3. Install dependencies:
 ```bash
